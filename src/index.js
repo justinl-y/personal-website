@@ -4,13 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+import App from './containers/App';
 import './styles/index.scss';
-
-const App = () => (
-  <div>
-    <p>App Component</p>
-  </div>
-);
 
 render(
   <Provider store={store}>

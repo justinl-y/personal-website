@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "string"
+  },
+  "about": {
+    "title": "string",
+    "content": ["paragraph1","paragraph2","paragraph3"]
+  },
+  "do": {
+    "title": "string",
+    "content": ["paragraph1","paragraph2","paragraph3"]
+  },
+  "know": {
+     "title": "string",
+     "frontEnd": {
+       "summary": "string",
+       "skills": 
+         ["React","React Native","Redux","Meteor","HTML","CSS / SCSS"]
+     },
+     "backEnd": {
+       "summary": "string",
+       "skills": 
+         ["Express","PostgreSQL","MySQL","REST APIs","SQL Server","Firebase"]
+     },
+     "languages": {
+       "summary": "string",
+       "skills": 
+         ["JavaScript","PHP","C#"]
+     },
+     "tools": {
+       "summary": "string",
+       "skills": 
+         ["Git","Webpack","ESLint","Babel"]
+     }
+  },
+  "work": {
+    "title": "string",
+    "content": {
+      "project1": {
+        "summary": {
+          "title": "string",
+          "image": "string",
+          "link": "string"
+        }},
+     "project2": {
+        "summary": {
+          "title": "string",
+          "image": "string",
+          "link": "string"
+        }},
+      "project3": {
+        "summary": {
+          "title": "string",
+          "image": "string",
+          "link": "string"
+        }}
+      }
+  },
+  "contact": {
+    "github": "string",
+    "linkedIn": "string",
+    "email": "string"
+  }
+}
