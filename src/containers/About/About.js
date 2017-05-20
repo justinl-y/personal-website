@@ -1,10 +1,16 @@
 import React from 'react';
-import styles from './styles.scss';
+import PropTypes from 'prop-types';
 
-const About = () => (
-  <div>
+// import styles from './styles.scss';
+
+const About = props => (
+  <div ref={props.divRef}>
     <p>About</p>
   </div>
 );
+
+About.propTypes = {
+  divRef: PropTypes.func.isRequired,
+};
 
 export default About;

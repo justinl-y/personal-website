@@ -1,10 +1,16 @@
 import React from 'react';
-import styles from './styles.scss';
+import PropTypes from 'prop-types';
 
-const Do = () => (
-  <div>
+// import styles from './styles.scss';
+
+const Do = props => (
+  <div ref={props.divRef} >
     <p>Do</p>
   </div>
 );
+
+Do.propTypes = {
+  divRef: PropTypes.func.isRequired,
+};
 
 export default Do;

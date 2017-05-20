@@ -1,10 +1,16 @@
 import React from 'react';
-import styles from './styles.scss';
+import PropTypes from 'prop-types';
 
-const Work = () => (
-  <div>
+// import styles from './styles.scss';
+
+const Work = props => (
+  <div ref={props.divRef}>
     <p>Work</p>
   </div>
 );
+
+Work.propTypes = {
+  divRef: PropTypes.func.isRequired,
+};
 
 export default Work;

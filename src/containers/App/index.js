@@ -1,25 +1,47 @@
 import React from 'react';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Header from '../../components/Header';
-import HeroContainer from '../Hero';
-import AboutContainer from '../About';
-import DoContainer from '../Do';
-import KnowContainer from '../Know';
-import WorkContainer from '../Work';
-import ContactContainer from '../Contact';
+import Main from '../Main';
 import Footer from '../../components/Footer';
+import NotFound from '../../components/NotFound';
 
 const App = () => (
   <div>
     <Header />
-    <HeroContainer />
-    <AboutContainer />
-    <DoContainer />
-    <KnowContainer />
-    <WorkContainer />
-    <ContactContainer />
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={() => <Main />}
+      />
+      <Route
+        path="/about"
+        render={() => <Main scrollTo="about" />}
+      />
+      <Route
+        path="/do"
+        render={() => <Main scrollTo="do" />}
+      />
+      <Route
+        path="/know"
+        render={() => <Main scrollTo="know" />}
+      />
+      <Route
+        path="/work"
+        render={() => <Main scrollTo="work" />}
+      />
+      <Route
+        path="/contact"
+        render={() => <Main scrollTo="contact" />}
+      />
+      <Route component={NotFound} />
+    </Switch>
     <Footer />
   </div>
 );
 
-export default App;
+export default withRouter(connect(
+  null,
+)(App));
