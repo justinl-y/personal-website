@@ -4,60 +4,56 @@ import PropTypes from 'prop-types';
 
 import Contact from './Contact';
 import Loading from '../../components/Loading';
+import { fetchContact } from '../../redux/modules/contactActions';
 
 class ContactContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isLoading: true,
-      content: {},
-    };
-  }
-
   componentDidMount() {
-    this.seperateContent(this.props.content);
-  }
-
-  seperateContent(content) {
-    const { title } = content;
-    const items = content.content;
-
-    this.setState({
-      isLoading: false,
-      content: { title, items },
-    });
+    this.props.fetchContact();
   }
 
   render() {
-    const { isLoading } = this.state;
-    const pageContent = this.state.content;
+    const divRef = this.props.divRef;
+    const { isLoading } = this.props;
+    const pageContent = this.props.content;
 
     return (
-      <div>
+      <div ref={divRef}>
         {
           isLoading ?
             <Loading />
           :
             <Contact
-              divRef={this.props.divRef}
               pageContent={pageContent}
             />
-      }
+        }
       </div>
     );
   }
 }
 
+ContactContainer.defaultProps = {
+  content: {},
+};
+
 ContactContainer.propTypes = {
   divRef: PropTypes.func.isRequired,
-  content: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchContact: PropTypes.func.isRequired,
+  content: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  content: state.contact,
+  isLoading: state.contact.isLoading,
+  content: state.contact.content,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchContact: () => {
+    dispatch(fetchContact());
+  },
 });
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(ContactContainer);

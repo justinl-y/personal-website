@@ -1,59 +1,58 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Hero from './Hero';
 import Loading from '../../components/Loading';
+import { fetchHero } from '../../redux/modules/heroActions';
 
 class HeroContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isLoading: true,
-      content: {},
-    };
-  }
-
   componentDidMount() {
-    this.seperateContent(this.props.content);
-  }
-
-  seperateContent(content) {
-    const [primaryTitle, secondaryTitle] = content.title;
-
-    this.setState({
-      isLoading: false,
-      content: { primaryTitle, secondaryTitle },
-    });
+    this.props.fetchHero();
   }
 
   render() {
-    const { isLoading } = this.state;
-    const pageContent = this.state.content;
+    const { divRef, isLoading } = this.props;
+    const sectionContent = this.props.content;
 
     return (
-      <div>
+      <div ref={divRef}>
         {
           isLoading ?
             <Loading />
           :
-            <Hero pageContent={pageContent} />
+            <Hero
+              sectionContent={sectionContent}
+            />
         }
       </div>
     );
   }
 }
 
+HeroContainer.defaultProps = {
+  content: {},
+};
+
 HeroContainer.propTypes = {
-  content: PropTypes.object.isRequired,
+  divRef: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchHero: PropTypes.func.isRequired,
+  content: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  content: state.hero,
+  isLoading: state.hero.isLoading,
+  content: state.hero.content,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchHero: () => {
+    dispatch(fetchHero());
+  },
 });
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(HeroContainer);
-

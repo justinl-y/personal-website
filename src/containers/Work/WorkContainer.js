@@ -4,43 +4,25 @@ import PropTypes from 'prop-types';
 
 import Work from './Work';
 import Loading from '../../components/Loading';
+import { fetchWork } from '../../redux/modules/workActions';
 
 class WorkContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isLoading: true,
-      content: {},
-    };
-  }
-
   componentDidMount() {
-    this.seperateContent(this.props.content);
-  }
-
-  seperateContent(content) {
-    const { title } = content;
-    const items = content.content;
-
-    this.setState({
-      isLoading: false,
-      content: { title, items },
-    });
+    this.props.fetchWork();
   }
 
   render() {
-    const { isLoading } = this.state;
-    const pageContent = this.state.content;
+    const divRef = this.props.divRef;
+    const { isLoading } = this.props;
+    const pageContent = this.props.content;
 
     return (
-      <div>
+      <div ref={divRef}>
         {
           isLoading ?
             <Loading />
           :
             <Work
-              divRef={this.props.divRef}
               pageContent={pageContent}
             />
         }
@@ -49,15 +31,29 @@ class WorkContainer extends Component {
   }
 }
 
+WorkContainer.defaultProps = {
+  content: {},
+};
+
 WorkContainer.propTypes = {
   divRef: PropTypes.func.isRequired,
-  content: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchWork: PropTypes.func.isRequired,
+  content: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  content: state.work,
+  isLoading: state.work.isLoading,
+  content: state.work.content,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchWork: () => {
+    dispatch(fetchWork());
+  },
 });
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(WorkContainer);

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Know = ({ divRef, pageContent }) => (
-  <div ref={divRef}>
+const Know = ({ pageContent }) => (
+  <div>
     <h2>{pageContent.title}</h2>
     {
       pageContent.items.map(item =>
@@ -23,7 +23,6 @@ const Know = ({ divRef, pageContent }) => (
 );
 
 Know.propTypes = {
-  divRef: PropTypes.func.isRequired,
   pageContent: PropTypes.object.isRequired,
 };
 

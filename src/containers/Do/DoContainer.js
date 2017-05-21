@@ -4,43 +4,25 @@ import PropTypes from 'prop-types';
 
 import Do from './Do';
 import Loading from '../../components/Loading';
+import { fetchDo } from '../../redux/modules/doActions';
 
 class DoContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isLoading: true,
-      content: {},
-    };
-  }
-
   componentDidMount() {
-    this.seperateContent(this.props.content);
-  }
-
-  seperateContent(content) {
-    const [primaryTitle, secondaryTitle] = content.title;
-    const text = content.content;
-
-    this.setState({
-      isLoading: false,
-      content: { primaryTitle, secondaryTitle, text },
-    });
+    this.props.fetchDo();
   }
 
   render() {
-    const { isLoading } = this.state;
-    const pageContent = this.state.content;
+    const divRef = this.props.divRef;
+    const { isLoading } = this.props;
+    const pageContent = this.props.content;
 
     return (
-      <div>
+      <div ref={divRef} >
         {
           isLoading ?
             <Loading />
           :
             <Do
-              divRef={this.props.divRef}
               pageContent={pageContent}
             />
         }
@@ -49,15 +31,29 @@ class DoContainer extends Component {
   }
 }
 
+DoContainer.defaultProps = {
+  content: {},
+};
+
 DoContainer.propTypes = {
   divRef: PropTypes.func.isRequired,
-  content: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchDo: PropTypes.func.isRequired,
+  content: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  content: state.do,
+  isLoading: state.do.isLoading,
+  content: state.do.content,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchDo: () => {
+    dispatch(fetchDo());
+  },
 });
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(DoContainer);

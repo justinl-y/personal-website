@@ -8,7 +8,7 @@ import workReducer from './modules/workReducer';
 import contactReducer from './modules/contactReducer';
 
 const combinedReducers = combineReducers({
-  isloading: loadingReducer,
+  isLoading: loadingReducer,
   hero: heroReducer,
   about: aboutReducer,
   do: doReducer,

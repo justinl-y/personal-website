@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Do = ({ divRef, pageContent }) => (
-  <div ref={divRef} >
+const Do = ({ pageContent }) => (
+  <div>
     <h2>{pageContent.primaryTitle}</h2>
     <h3>{pageContent.secondaryTitle}</h3>
     {
@@ -16,7 +16,6 @@ const Do = ({ divRef, pageContent }) => (
 );
 
 Do.propTypes = {
-  divRef: PropTypes.func.isRequired,
   pageContent: PropTypes.object.isRequired,
 };
 

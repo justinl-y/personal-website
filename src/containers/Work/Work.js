@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Work = ({ divRef, pageContent }) => (
-  <div ref={divRef}>
+const Work = ({ pageContent }) => (
+  <div>
     <h2>{pageContent.title}</h2>
     {
       pageContent.items.map(item =>
         (<div key={Date.now() * Math.random()}>
           <div className="work-summary">
             <img src={item.summary.image} alt="" />
-            <h3>{item.summary.title}</h3>
-            <p>{item.summary.link}</p>
+            <h3><a href={item.summary.url} target="_blank" rel="noopener noreferrer">{item.summary.title}</a></h3>
             <p>{item.summary.description}</p>
           </div>
           <div className="work-detail">
@@ -29,7 +28,6 @@ const Work = ({ divRef, pageContent }) => (
 );
 
 Work.propTypes = {
-  divRef: PropTypes.func.isRequired,
   pageContent: PropTypes.object.isRequired,
 };
 

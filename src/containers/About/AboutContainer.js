@@ -4,44 +4,25 @@ import PropTypes from 'prop-types';
 
 import About from './About';
 import Loading from '../../components/Loading';
+import { fetchAbout } from '../../redux/modules/aboutActions';
 
 class AboutContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isLoading: true,
-      content: {},
-    };
-  }
-
   componentDidMount() {
-    this.seperateContent(this.props.content);
-  }
-
-  seperateContent(content) {
-    const { title } = content;
-    const text = content.content;
-
-    this.setState({
-      isLoading: false,
-      content: { title, text },
-    });
+    this.props.fetchAbout();
   }
 
   render() {
-    const { isLoading } = this.state;
-    const pageContent = this.state.content;
+    const { divRef, isLoading } = this.props;
+    const sectionContent = this.props.content;
 
     return (
-      <div>
+      <div ref={divRef}>
         {
           isLoading ?
             <Loading />
           :
             <About
-              divRef={this.props.divRef}
-              pageContent={pageContent}
+              sectionContent={sectionContent}
             />
         }
       </div>
@@ -49,15 +30,29 @@ class AboutContainer extends Component {
   }
 }
 
+AboutContainer.defaultProps = {
+  content: {},
+};
+
 AboutContainer.propTypes = {
   divRef: PropTypes.func.isRequired,
-  content: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchAbout: PropTypes.func.isRequired,
+  content: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  content: state.about,
+  isLoading: state.about.isLoading,
+  content: state.about.content,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchAbout: () => {
+    dispatch(fetchAbout());
+  },
 });
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(AboutContainer);

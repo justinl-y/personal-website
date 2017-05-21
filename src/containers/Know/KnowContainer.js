@@ -4,43 +4,25 @@ import PropTypes from 'prop-types';
 
 import Know from './Know';
 import Loading from '../../components/Loading';
+import { fetchKnow } from '../../redux/modules/knowActions';
 
 class KnowContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isLoading: true,
-      content: {},
-    };
-  }
-
   componentDidMount() {
-    this.seperateContent(this.props.content);
-  }
-
-  seperateContent(content) {
-    const { title } = content;
-    const items = content.content;
-
-    this.setState({
-      isLoading: false,
-      content: { title, items },
-    });
+    this.props.fetchKnow();
   }
 
   render() {
-    const { isLoading } = this.state;
-    const pageContent = this.state.content;
+    const divRef = this.props.divRef;
+    const { isLoading } = this.props;
+    const pageContent = this.props.content;
 
     return (
-      <div>
+      <div ref={divRef}>
         {
           isLoading ?
             <Loading />
           :
             <Know
-              divRef={this.props.divRef}
               pageContent={pageContent}
             />
         }
@@ -49,15 +31,29 @@ class KnowContainer extends Component {
   }
 }
 
+KnowContainer.defaultProps = {
+  content: {},
+};
+
 KnowContainer.propTypes = {
   divRef: PropTypes.func.isRequired,
-  content: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchKnow: PropTypes.func.isRequired,
+  content: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  content: state.know,
+  isLoading: state.know.isLoading,
+  content: state.know.content,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchKnow: () => {
+    dispatch(fetchKnow());
+  },
 });
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(KnowContainer);

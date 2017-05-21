@@ -15,7 +15,7 @@ class Main extends Component {
     if (scrollTo) {
       setTimeout(() => {
         this.scrollToDiv(scrollTo);
-      });
+      }, 250);
     }
   }
 
@@ -55,8 +55,8 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-        <HeroContainer />
+      <div className="main">
+        <HeroContainer divRef={el => (this.heroDivElement = el)} />
         <AboutContainer divRef={el => (this.aboutDivElement = el)} />
         <DoContainer divRef={el => (this.doDivElement = el)} />
         <KnowContainer divRef={el => (this.knowDivElement = el)} />

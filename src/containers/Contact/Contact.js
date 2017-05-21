@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Contact = ({ divRef, pageContent }) => (
-  <div id="contact" ref={divRef}>
+const Contact = ({ pageContent }) => (
+  <div>
     <h2>{pageContent.title}</h2>
     <div>
-      <p>{pageContent.items.linkedIn}</p>
-      <p>{pageContent.items.github}</p>
+      <ul>
+        <li><a href={pageContent.items.linkedIn.url} target="_blank" rel="noopener noreferrer">{pageContent.items.linkedIn.title}</a></li>
+        <li><a href={pageContent.items.github.url} target="_blank" rel="noopener noreferrer">{pageContent.items.github.title}</a></li>
+      </ul>
     </div>
     <div>
       <form>
@@ -27,7 +29,6 @@ const Contact = ({ divRef, pageContent }) => (
 );
 
 Contact.propTypes = {
-  divRef: PropTypes.func.isRequired,
   pageContent: PropTypes.object.isRequired,
 };
 
