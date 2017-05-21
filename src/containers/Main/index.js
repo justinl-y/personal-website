@@ -13,7 +13,9 @@ class Main extends Component {
     const { scrollTo } = this.props;
 
     if (scrollTo) {
-      this.scrollToDiv(scrollTo);
+      setTimeout(() => {
+        this.scrollToDiv(scrollTo);
+      });
     }
   }
 
