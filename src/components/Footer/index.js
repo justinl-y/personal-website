@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { currentYear } from '../../helpers/functions';
+
 const Footer = () => (
   <div className="footer">
-    <p>Footer</p>
+    <p>&copy; Justin Levett-Yeats {currentYear()}</p>
   </div>
 );
 

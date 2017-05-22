@@ -7,11 +7,13 @@ const Work = ({ sectionContent, randomKey }) => (
   <div>
     <h2>{sectionContent.title}</h2>
     {
-      sectionContent.items.map(item =>
-        (<div key={randomKey()}>
+      sectionContent.items.map(item => (
+        <div key={randomKey()}>
           <div className="work-summary">
-            <img src={item.summary.image} alt="" />
-            <h3><a href={item.summary.url} target="_blank" rel="noopener noreferrer">{item.summary.title}</a></h3>
+            <a href={item.summary.url} target="_blank" rel="noopener noreferrer">
+              <img src={item.summary.image} alt={item.summary.title} />
+            </a>
+            <h3>{item.summary.title}</h3>
             <p>{item.summary.description}</p>
           </div>
           <div className="work-detail">
@@ -29,15 +31,15 @@ const Work = ({ sectionContent, randomKey }) => (
               <h3>{item.detail.technologies.title}</h3>
               <ul>
                 {
-                  item.detail.technologies.items.map(
-                    technology => (<li key={randomKey()}>{technology}</li>
+                  item.detail.technologies.items.map(technology => (
+                    <li key={randomKey()}>{technology}</li>
                   ))
                 }
               </ul>
             </div>
           </div>
-        </div>),
-      )
+        </div>
+      ))
     }
   </div>
 );

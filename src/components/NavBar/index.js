@@ -1,15 +1,39 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from './styles.scss';
+
+import NavItem from '../NavItem';
+import { randomKey } from '../../helpers/functions';
+
+const navItemsLeft = [
+  { to: '/about', title: 'About Me', exact: false },
+  { to: '/do', title: 'What I Do', exact: false },
+  { to: '/know', title: 'What I Know', exact: false },
+];
+
+const navItemsCentre = [
+  { to: '/', title: 'SoP', exact: true },
+];
+
+const navItemsRight = [
+  { to: '/work', title: 'My Work', exact: false },
+  { to: '/contact', title: 'Contact Me', exact: false },
+];
+
+const renderNavItems = navItems => (
+  navItems.map(item => (
+    <NavItem
+      key={randomKey()}
+      to={item.to}
+      title={item.title}
+      exact={item.exact}
+    />
+  ))
+);
 
 const Navbar = () => (
   <nav>
-    <li><NavLink exact to="/" activeClassName={styles.selected}>SoP |</NavLink></li>
-    <li><NavLink to="/about" activeClassName={styles.selected}>| About Me |</NavLink></li>
-    <li><NavLink to="/do" activeClassName={styles.selected}>| What I Do |</NavLink></li>
-    <li><NavLink to="/know" activeClassName={styles.selected}>| What I Know |</NavLink></li>
-    <li><NavLink to="/work" activeClassName={styles.selected}>| My Work |</NavLink></li>
-    <li><NavLink to="/contact" activeClassName={styles.selected}>| Contact Me</NavLink></li>
+    <div className="nav-left">{renderNavItems(navItemsLeft)}</div>
+    <div className="nav-centre">{renderNavItems(navItemsCentre)}</div>
+    <div className="nav-right">{renderNavItems(navItemsRight)}</div>
   </nav>
 );
 
