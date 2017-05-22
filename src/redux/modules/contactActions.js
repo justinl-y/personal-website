@@ -19,7 +19,7 @@ export const loadContact = data => ({
 
 export const fetchContact = () => (dispatch) => {
   dispatch(loadStart());
-  fetch('../../default-data.json')
+  return fetch('../../default-data.json')
     .then(response => (
       response.json()
     ))

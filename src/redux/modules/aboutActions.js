@@ -19,7 +19,7 @@ export const loadAbout = data => ({
 
 export const fetchAbout = () => (dispatch) => {
   dispatch(loadStart());
-  fetch('../../default-data.json')
+  return fetch('../../default-data.json')
     .then(response => (
       response.json()
     ))
