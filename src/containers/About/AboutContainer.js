@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import About from './About';
 import Loading from '../../components/Loading';
 import { fetchAbout } from '../../redux/modules/aboutActions';
+import { randomKey } from '../../helpers/functions';
 
 class AboutContainer extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class AboutContainer extends Component {
           :
             <About
               sectionContent={sectionContent}
+              randomKey={randomKey}
             />
         }
       </div>
@@ -49,6 +51,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchAbout: () => {
     dispatch(fetchAbout());
+  },
+  randomKey: () => {
+    dispatch(randomKey());
   },
 });
 

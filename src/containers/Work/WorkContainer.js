@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Work from './Work';
 import Loading from '../../components/Loading';
 import { fetchWork } from '../../redux/modules/workActions';
+import { randomKey } from '../../helpers/functions';
 
 class WorkContainer extends Component {
   componentDidMount() {
@@ -17,13 +18,14 @@ class WorkContainer extends Component {
     const sectionContent = this.props.content;
 
     return (
-      <div ref={divRef}>
+      <div ref={divRef} >
         {
           isLoading ?
             <Loading />
           :
             <Work
               sectionContent={sectionContent}
+              randomKey={randomKey}
             />
         }
       </div>
@@ -50,6 +52,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchWork: () => {
     dispatch(fetchWork());
+  },
+  randomKey: () => {
+    dispatch(randomKey());
   },
 });
 

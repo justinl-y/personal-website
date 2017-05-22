@@ -3,23 +3,38 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Work = ({ sectionContent }) => (
+const Work = ({ sectionContent, randomKey }) => (
   <div>
     <h2>{sectionContent.title}</h2>
     {
       sectionContent.items.map(item =>
-        (<div key={Date.now() * Math.random()}>
+        (<div key={randomKey()}>
           <div className="work-summary">
             <img src={item.summary.image} alt="" />
             <h3><a href={item.summary.url} target="_blank" rel="noopener noreferrer">{item.summary.title}</a></h3>
             <p>{item.summary.description}</p>
           </div>
           <div className="work-detail">
-            <ul>
-              {
-                item.detail.map(detail => (<li key={Date.now() * Math.random()}>{detail}</li>))
-              }
-            </ul>
+            <div>
+              <h3>{item.detail.tasks.title}</h3>
+              <ul>
+                {
+                  item.detail.tasks.items.map(task => (
+                    <li key={randomKey()}>{task}</li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div>
+              <h3>{item.detail.technologies.title}</h3>
+              <ul>
+                {
+                  item.detail.technologies.items.map(
+                    technology => (<li key={randomKey()}>{technology}</li>
+                  ))
+                }
+              </ul>
+            </div>
           </div>
         </div>),
       )
@@ -29,6 +44,7 @@ const Work = ({ sectionContent }) => (
 
 Work.propTypes = {
   sectionContent: PropTypes.object.isRequired,
+  randomKey: PropTypes.func.isRequired,
 };
 
 export default Work;

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Do = ({ sectionContent }) => (
+const Do = ({ sectionContent, randomKey }) => (
   <div>
     <h2>{sectionContent.primaryTitle}</h2>
     <h3>{sectionContent.secondaryTitle}</h3>
     {
       sectionContent.text.map(item =>
-        (<p key={Date.now() * Math.random()}>{item}</p>),
+        (<p key={randomKey()}>{item}</p>),
       )
     }
   </div>
@@ -17,6 +17,7 @@ const Do = ({ sectionContent }) => (
 
 Do.propTypes = {
   sectionContent: PropTypes.object.isRequired,
+  randomKey: PropTypes.func.isRequired,
 };
 
 export default Do;

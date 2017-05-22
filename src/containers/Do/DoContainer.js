@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Do from './Do';
 import Loading from '../../components/Loading';
 import { fetchDo } from '../../redux/modules/doActions';
+import { randomKey } from '../../helpers/functions';
 
 class DoContainer extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class DoContainer extends Component {
           :
             <Do
               sectionContent={sectionContent}
+              randomKey={randomKey}
             />
         }
       </div>
@@ -50,6 +52,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchDo: () => {
     dispatch(fetchDo());
+  },
+  randomKey: () => {
+    dispatch(randomKey());
   },
 });
 

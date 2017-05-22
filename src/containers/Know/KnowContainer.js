@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Know from './Know';
 import Loading from '../../components/Loading';
 import { fetchKnow } from '../../redux/modules/knowActions';
+import { randomKey } from '../../helpers/functions';
 
 class KnowContainer extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class KnowContainer extends Component {
           :
             <Know
               sectionContent={sectionContent}
+              randomKey={randomKey}
             />
         }
       </div>
@@ -50,6 +52,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchKnow: () => {
     dispatch(fetchKnow());
+  },
+  randomKey: () => {
+    dispatch(randomKey());
   },
 });
 
