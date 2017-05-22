@@ -14,7 +14,7 @@ class ContactContainer extends Component {
   render() {
     const divRef = this.props.divRef;
     const { isLoading } = this.props;
-    const pageContent = this.props.content;
+    const sectionContent = this.props.content;
 
     return (
       <div ref={divRef}>
@@ -23,7 +23,7 @@ class ContactContainer extends Component {
             <Loading />
           :
             <Contact
-              pageContent={pageContent}
+              sectionContent={sectionContent}
             />
         }
       </div>

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Work = ({ pageContent }) => (
+const Work = ({ sectionContent }) => (
   <div>
-    <h2>{pageContent.title}</h2>
+    <h2>{sectionContent.title}</h2>
     {
-      pageContent.items.map(item =>
+      sectionContent.items.map(item =>
         (<div key={Date.now() * Math.random()}>
           <div className="work-summary">
             <img src={item.summary.image} alt="" />
@@ -28,7 +28,7 @@ const Work = ({ pageContent }) => (
 );
 
 Work.propTypes = {
-  pageContent: PropTypes.object.isRequired,
+  sectionContent: PropTypes.object.isRequired,
 };
 
 export default Work;

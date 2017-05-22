@@ -12,11 +12,11 @@ class HeroContainer extends Component {
   }
 
   render() {
-    const { divRef, isLoading } = this.props;
+    const { isLoading } = this.props;
     const sectionContent = this.props.content;
 
     return (
-      <div ref={divRef}>
+      <div>
         {
           isLoading ?
             <Loading />
@@ -35,7 +35,6 @@ HeroContainer.defaultProps = {
 };
 
 HeroContainer.propTypes = {
-  divRef: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   fetchHero: PropTypes.func.isRequired,
   content: PropTypes.object,

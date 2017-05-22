@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Do = ({ pageContent }) => (
+const Do = ({ sectionContent }) => (
   <div>
-    <h2>{pageContent.primaryTitle}</h2>
-    <h3>{pageContent.secondaryTitle}</h3>
+    <h2>{sectionContent.primaryTitle}</h2>
+    <h3>{sectionContent.secondaryTitle}</h3>
     {
-      pageContent.text.map(item =>
+      sectionContent.text.map(item =>
         (<p key={Date.now() * Math.random()}>{item}</p>),
       )
     }
@@ -16,7 +16,7 @@ const Do = ({ pageContent }) => (
 );
 
 Do.propTypes = {
-  pageContent: PropTypes.object.isRequired,
+  sectionContent: PropTypes.object.isRequired,
 };
 
 export default Do;

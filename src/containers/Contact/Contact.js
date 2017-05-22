@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Contact = ({ pageContent }) => (
+const Contact = ({ sectionContent }) => (
   <div>
-    <h2>{pageContent.title}</h2>
+    <h2>{sectionContent.title}</h2>
     <div>
       <ul>
-        <li><a href={pageContent.items.linkedIn.url} target="_blank" rel="noopener noreferrer">{pageContent.items.linkedIn.title}</a></li>
-        <li><a href={pageContent.items.github.url} target="_blank" rel="noopener noreferrer">{pageContent.items.github.title}</a></li>
+        <li><a href={sectionContent.items.linkedIn.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.linkedIn.title}</a></li>
+        <li><a href={sectionContent.items.github.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.github.title}</a></li>
       </ul>
     </div>
     <div>
@@ -29,7 +29,7 @@ const Contact = ({ pageContent }) => (
 );
 
 Contact.propTypes = {
-  pageContent: PropTypes.object.isRequired,
+  sectionContent: PropTypes.object.isRequired,
 };
 
 export default Contact;

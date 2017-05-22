@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 // import styles from './styles.scss';
 
-const Know = ({ pageContent }) => (
+const Know = ({ sectionContent }) => (
   <div>
-    <h2>{pageContent.title}</h2>
+    <h2>{sectionContent.title}</h2>
     {
-      pageContent.items.map(item =>
+      sectionContent.items.map(item =>
         (<div key={Date.now() * Math.random()}>
           <h3>{item.title}</h3>
           <p>{item.summary}</p>
@@ -23,7 +23,7 @@ const Know = ({ pageContent }) => (
 );
 
 Know.propTypes = {
-  pageContent: PropTypes.object.isRequired,
+  sectionContent: PropTypes.object.isRequired,
 };
 
 export default Know;
