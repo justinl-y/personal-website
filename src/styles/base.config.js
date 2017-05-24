@@ -1,0 +1,32 @@
+export const colors = {
+  mainBrandColor: '#FF8E3E',
+  secondaryBrandColor: '#FFDD1E',
+  tertiaryBrandColor: '#2EAEB7',
+  primaryBtnColor: '#FF8E3E',
+  secondaryBtnColor: '#9DDA2C',
+  primaryNavColor: '#FF8E3E',
+  secondaryNavColor: '#FFBC8C',
+  appetizerColor: '#93B259',
+  mainCourseColor: '#37B1B0',
+  borderColorGray: '#979797',
+  saladsColor: '#E8CD38',
+  dessertsColor: '#542722',
+  drinksColor: '#F7931E',
+  chipInColor: '#93B259',
+  talentColor: '#37B1B0',
+  customColor: '#E8CD38',
+  courseIndicatorBG: '#E1E1E1',
+  courseIndicatorColor: '#747474',
+  invitePrimaryBtn: '#82B426',
+  inviteSecondaryBtn: '#9DDA2C',
+};
+
+export const typography = {
+  fontMain: 'Ubuntu',
+  fontMainLight: 'Ubuntu Light',
+  fontMainMedium: 'Ubuntu Medium',
+  fontMainBold: 'Ubuntu Bold',
+  smallestFontSize: 10,
+  baseFontSize: 14,
+  headerFontSize: 24,
+};

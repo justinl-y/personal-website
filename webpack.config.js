@@ -16,9 +16,6 @@ const styleLoaders = [
       ],
     },
   },
-  {
-    loader: 'sass-loader',
-  },
 ];
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -52,6 +49,41 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.css\.js$/,
+        exclude: [/node_modules/],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: styleLoaders,
+        }),
+      },
+      {
+        test: /\.css\.js$/,
+        exclude: [/node_modules/],
+        use: [{
+          loader: 'css-js-loader',
+        }],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        exclude: [/node_modules/],
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
+        }],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        exclude: [/node_modules/],
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
+        }],
+      },
+      {
         test: /\.js$/,
         enforce: 'pre',
         exclude: [/node_modules/],
@@ -74,34 +106,6 @@ const config = {
               'es2016',
               'es2017',
             ],
-          },
-        }],
-      },
-      {
-        test: /\.(scss|sass)$/,
-        exclude: [/node_modules/],
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: styleLoaders,
-        }),
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        exclude: [/node_modules/],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-          },
-        }],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        exclude: [/node_modules/],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
           },
         }],
       },
