@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import styles from './styles.scss';
+import styles from './styles.css';
 
 const Contact = ({ sectionContent }) => (
   <div>
@@ -13,7 +13,7 @@ const Contact = ({ sectionContent }) => (
       </ul>
     </div>
     <div>
-      <form>
+      <form className={styles.form}>
         <label htmlFor="name">Your Name</label>
         <input id="name" type="text" />
         <label htmlFor="email">Your Email</label>

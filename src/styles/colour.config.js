@@ -15,3 +15,5 @@ export const WHITE = '#ffffff';*/
 
 exports.CHARCOAL = '#2b2e34';
 exports.LILAC = '#9068be';
+
+ // module.exports = something;

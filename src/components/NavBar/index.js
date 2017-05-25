@@ -2,6 +2,7 @@ import React from 'react';
 
 import NavItem from '../NavItem';
 import { randomKey } from '../../helpers/functions';
+import styles from './styles.css';
 
 const navItemsLeft = [
   { to: '/about', title: 'About Me', exact: false },
@@ -30,7 +31,7 @@ const renderNavItems = navItems => (
 );
 
 const Navbar = () => (
-  <nav>
+  <nav className={styles.navBar}>
     <div className="nav-left">{renderNavItems(navItemsLeft)}</div>
     <div className="nav-centre">{renderNavItems(navItemsCentre)}</div>
     <div className="nav-right">{renderNavItems(navItemsRight)}</div>

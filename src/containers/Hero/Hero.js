@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import styles from './styles.scss';
+import styles from './styles.css';
 
 const Hero = ({ sectionContent }) => (
   <div>
-    <h1>{sectionContent.primaryTitle}</h1>
+    <i className="fa fa-address-book fa-4x" aria-hidden="true" />
+    <h1 className={styles.headerText}>{sectionContent.primaryTitle}</h1>
     <h2>{sectionContent.secondaryTitle}</h2>
   </div>
 );

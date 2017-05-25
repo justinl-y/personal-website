@@ -1,39 +1,36 @@
-// =============================================================================
-// Import lodash.
-// =============================================================================
-// import map from 'lodash/fp/map';
-// import times from 'lodash/fp/times';
+const ROBERTO_MEDIUM = {
+  '@import': 'url(https://fonts.googleapis.com/css?family=Roboto:100, 100i,300,300i,400,400i,700,700i)',
+};
+
+exports.FONT_AWESOME = {
+  '@import': 'url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)',
+};
 
 // Base font size in px.
-// export const BASE_FONT_SIZE = 16;
+exports.FONT_SIZE = {
+  small: 14,
+  medium: 16,
+  large: 18,
+};
 
-/* export const BASE_FONT_STACK = [*/
 exports.BASE_FONT_STACK = [
-  '-apple-system',
-  'BlinkMacSystemFont',
-  '"Segoe UI"',
-  'Roboto',
-  'Helvetica',
-  'Arial',
+  ROBERTO_MEDIUM,
   'sans-serif',
-  '"Apple Color Emoji"',
-  '"Segoe UI Emoji"',
-  '"Segoe UI Symbol"',
 ];
 
-/* export const MONO_FONT_STACK = [*/
+exports.HEADING_FONT_STACK = [
+  'impact',
+  'sans-serif',
+];
+
 exports.MONO_FONT_STACK = [
-  'SFMono-Regular',
-  'Consolas',
-  '"Liberation Mono"',
-  'Menlo',
   'Courier',
   'monospace',
 ];
 
 // Base line height in rem.
 // export const BASE_LINE_HEIGHT = 2;
-exports.BASE_LINE_HEIGHT = 2;
+exports.BASE_LINE_HEIGHT = 1.45;
 
 // Scale factor between each heading size, i.e. h1 size = FACTOR * h2 size.
 // export const HEADING_SCALE_FACTOR = 1.618;
