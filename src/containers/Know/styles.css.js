@@ -8,28 +8,28 @@ export default {
     justifyContent: 'center',
     textAlign: 'center',
   },
-  '.work': {
+  '.skills': {
     display: 'flex',
     flexFlow: 'column nowrap',
   },
-  '.workItem': {
+  '.skillType': {
     display: 'flex',
     flexFlow: 'column nowrap',
   },
-  '.workList': {
+  '.skillList': {
     padding: 0,
   },
-  '.workItems': {
+  '.skillItems': {
     listStyleType: 'none',
   },
   [BREAKPOINTS.medium]: {
     '.container': {
       fontSize: FONT_SIZE.base,
     },
-    '.work': {
+    '.skills': {
       flexFlow: 'row wrap',
     },
-    '.workItem': {
+    '.skillType': {
       flexBasis: '50%',
     },
   },
@@ -37,8 +37,8 @@ export default {
     '.container': {
       maxWidth: CONTAINER_WIDTH,
     },
-    '.workItem': {
-      flexBasis: '33%',
+    '.skillType': {
+      flexBasis: '25%',
     },
   },
 };

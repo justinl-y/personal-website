@@ -32,9 +32,9 @@ const renderNavItems = navItems => (
 
 const Navbar = () => (
   <nav className={styles.navBar}>
-    <div className="nav-left">{renderNavItems(navItemsLeft)}</div>
-    <div className="nav-centre">{renderNavItems(navItemsCentre)}</div>
-    <div className="nav-right">{renderNavItems(navItemsRight)}</div>
+    <div className={styles.navBarItemLeft}>{renderNavItems(navItemsLeft)}</div>
+    <div className={styles.navBarItemMiddle}>{renderNavItems(navItemsCentre)}</div>
+    <div className={styles.navBarItemRight}>{renderNavItems(navItemsRight)}</div>
   </nav>
 );
 

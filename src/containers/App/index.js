@@ -2,9 +2,9 @@ import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Header from '../../components/Header';
+import Header from '../../containers/Header';
 import Main from '../Main';
-import Footer from '../../components/Footer';
+import FooterContainer from '../../containers/Footer';
 import NotFound from '../../components/NotFound';
 
 const App = () => (
@@ -38,7 +38,7 @@ const App = () => (
       />
       <Route component={NotFound} />
     </Switch>
-    <Footer />
+    <FooterContainer />
   </div>
 );
 

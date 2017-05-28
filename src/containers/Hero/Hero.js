@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.css';
 
 const Hero = ({ sectionContent }) => (
-  <div>
+  <div className={styles.component}>
     <h1 className={styles.headerText}>{sectionContent.primaryTitle}</h1>
     <h2>{sectionContent.secondaryTitle}</h2>
   </div>

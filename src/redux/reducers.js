@@ -5,6 +5,7 @@ import doReducer from './modules/doReducer';
 import knowReducer from './modules/knowReducer';
 import workReducer from './modules/workReducer';
 import contactReducer from './modules/contactReducer';
+import footerReducer from './modules/footerReducer';
 
 const combinedReducers = combineReducers({
   hero: heroReducer,
@@ -13,6 +14,7 @@ const combinedReducers = combineReducers({
   know: knowReducer,
   work: workReducer,
   contact: contactReducer,
+  footer: footerReducer,
 });
 
 export default combinedReducers;

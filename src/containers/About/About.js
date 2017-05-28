@@ -13,7 +13,7 @@ const About = ({ sectionContent, randomKey }) => (
           // (<p key={randomKey()}>{item}</p>),
           (<p
             key={randomKey()}
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item) }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item) }} // eslint-disable-line
           />),
         )
       }
