@@ -1,0 +1,3 @@
+const CONTAINER = 1250;
+
+exports.CONTAINER_WIDTH = `${CONTAINER}px`;

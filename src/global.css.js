@@ -1,12 +1,13 @@
 import {
   CHARCOAL,
-  // LILAC,
+  LILAC,
 } from './styles/colour.config';
 import {
   FONT_AWESOME,
   FONT_SIZE,
-  BASE_FONT_STACK,
-  BASE_LINE_HEIGHT,
+  FONT_STACK_BASE,
+  FONT_STACK_HEADING,
+  LINE_HEIGHT_BASE,
 } from './styles/typography.config';
 // import { anchorColor } from '/util/css.util';
 
@@ -16,8 +17,10 @@ export default [{
    * See: http://codepen.io/absolutholz/post/html-and-body-element-height-100
    * ========================================================================
    */
-  // '@import': 'url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)',
   ...FONT_AWESOME,
+  ...FONT_STACK_BASE
+      .filter(font => font.url !== null)
+      .map(font => `${font.url};`),
   html: {
     height: '100%',
   },
@@ -39,29 +42,30 @@ export default [{
 }, {
   'html, body': {
     color: CHARCOAL,
-    fontFamily: BASE_FONT_STACK.join(', '),
-    fontWeight: 100,
-    fontSize: FONT_SIZE.small,
-    lineHeight: `${BASE_LINE_HEIGHT}rem`,
+    fontFamily: FONT_STACK_BASE.map(font => font.name).join(','),
+    fontWeight: 300,
+    fontSize: FONT_SIZE.mobile,
+    lineHeight: `${LINE_HEIGHT_BASE}rem`,
   },
   'h1, h2, h3, h4': {
-    fontFamily: BASE_FONT_STACK.join(', '),
+    color: LILAC,
+    fontFamily: FONT_STACK_HEADING.map(font => font.name).join(','),
     fontWeight: 400,
     // fontWeight: 'inherit',
-    margin: '1.414rem 0 0.5rem',
-    lineHeight: '1.2',
+    // margin: '1.414rem 0 0.5rem',
+    lineHeight: `${LINE_HEIGHT_BASE}rem`,
   },
   h1: {
-    fontSize: '3.157rem',
+    // fontSize: '2rem',
   },
   h2: {
-    fontSize: '2.369rem',
+    // fontSize: '1.5rem',
   },
   h3: {
-    fontSize: '1.777rem',
+    // fontSize: '1.125rem',
   },
   h4: {
-    fontSize: '1.333rem',
+    // fontSize: '1.333rem',
   },
   a: {
     // ...anchorColor(LILAC),

@@ -8,6 +8,8 @@ import KnowContainer from '../../containers/Know';
 import WorkContainer from '../../containers/Work';
 import ContactContainer from '../../containers/Contact';
 
+// import styles from './styles.css';
+
 class Main extends Component {
   componentDidMount() {
     const { scrollTo } = this.props;
@@ -55,7 +57,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="container">
         <HeroContainer />
         <AboutContainer divRef={el => (this.aboutDivElement = el)} />
         <DoContainer divRef={el => (this.doDivElement = el)} />

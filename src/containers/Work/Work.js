@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import styles from './styles.scss';
+import styles from './styles.css';
 
 const Work = ({ sectionContent, randomKey }) => (
   <div>
-    <h2>{sectionContent.title}</h2>
+    <h2 className={styles.headerStyle}>{sectionContent.title}</h2>
     {
       sectionContent.items.map(item => (
         <div key={randomKey()}>
@@ -18,7 +18,7 @@ const Work = ({ sectionContent, randomKey }) => (
           </div>
           <div className="work-detail">
             <div>
-              <h3>{item.detail.tasks.title}</h3>
+              <h4>{item.detail.tasks.title}</h4>
               <ul>
                 {
                   item.detail.tasks.items.map(task => (
@@ -28,7 +28,7 @@ const Work = ({ sectionContent, randomKey }) => (
               </ul>
             </div>
             <div>
-              <h3>{item.detail.technologies.title}</h3>
+              <h4>{item.detail.technologies.title}</h4>
               <ul>
                 {
                   item.detail.technologies.items.map(technology => (
