@@ -4,26 +4,20 @@ import { FONT_SIZE } from '../../styles/typography.config';
 
 export default {
   '.component': {
+    display: 'flex',
     textAlign: 'center',
-  },
-  '.headerText': {
   },
   [BREAKPOINTS.medium]: {
     '.component': {
-      display: 'flex',
       justifyContent: 'center',
     },
     '.container': {
       fontSize: FONT_SIZE.base,
     },
-    '.headerText': {
-    },
   },
   [BREAKPOINTS.large]: {
     '.container': {
       maxWidth: CONTAINER_WIDTH,
-    },
-    '.headerText': {
     },
   },
 };

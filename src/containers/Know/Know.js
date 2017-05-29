@@ -6,6 +6,7 @@ import styles from './styles.css';
 const Know = ({ sectionContent, randomKey }) => (
   <div className={styles.component}>
     <div className={styles.container}>
+      <i className="fa fa-lightbulb-o fa-4x" aria-hidden="true" />
       <h2>{sectionContent.title}</h2>
       <div className={styles.skills}>
         {

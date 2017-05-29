@@ -6,14 +6,17 @@ import styles from './styles.css';
 const Contact = ({ sectionContent }) => (
   <div className={styles.component}>
     <div className={styles.container}>
+      <i className="fa fa-telegram fa-3x" aria-hidden="true" />
       <h2>{sectionContent.title}</h2>
       <div className={styles.contactSections}>
         <div className={styles.contactSectionItem}>
           <ul className={styles.contactLinks}>
             <li className={styles.contactLinkItems}>
+              <i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
               <a href={sectionContent.items.linkedIn.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.linkedIn.title}</a>
             </li>
             <li className={styles.contactLinkItems}>
+              <i className="fa fa-github fa-2x" aria-hidden="true" />
               <a href={sectionContent.items.github.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.github.title}</a>
             </li>
           </ul>

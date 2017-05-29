@@ -6,6 +6,7 @@ import styles from './styles.css';
 const Work = ({ sectionContent, randomKey }) => (
   <div className={styles.component}>
     <div className={styles.container}>
+      <i className="fa fa-archive fa-3x" aria-hidden="true" />
       <h2 className={styles.headerStyle}>{sectionContent.title}</h2>
       <div className={styles.work}>
         {
@@ -24,7 +25,7 @@ const Work = ({ sectionContent, randomKey }) => (
                 <ul className={styles.workList}>
                   {
                     item.detail.tasks.items.map(task => (
-                      <li key={randomKey()} className={styles.workItems}>{task}</li>
+                      <li key={randomKey()}>{task}</li>
                     ))
                   }
                 </ul>

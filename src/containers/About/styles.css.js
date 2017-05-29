@@ -6,9 +6,6 @@ export default {
   '.component': {
     textAlign: 'center',
   },
-  '.headerText': {
-    color: 'red',
-  },
   [BREAKPOINTS.medium]: {
     '.component': {
       display: 'flex',
@@ -17,16 +14,10 @@ export default {
     '.container': {
       fontSize: FONT_SIZE.base,
     },
-    '.headerText': {
-      color: 'blue',
-    },
   },
   [BREAKPOINTS.large]: {
     '.container': {
       maxWidth: CONTAINER_WIDTH,
-    },
-    '.headerText': {
-      color: 'green',
     },
   },
 };

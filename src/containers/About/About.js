@@ -7,6 +7,7 @@ import styles from './styles.css';
 const About = ({ sectionContent, randomKey }) => (
   <div className={styles.component}>
     <div className={styles.container}>
+      <i className="fa fa-user-circle fa-3x" aria-hidden="true" />
       <h2 className={styles.headerText}>{sectionContent.title}</h2>
       {
         sectionContent.text.map(item =>
@@ -17,7 +18,6 @@ const About = ({ sectionContent, randomKey }) => (
           />),
         )
       }
-      <i className="fa fa-address-book fa-3x" aria-hidden="true" />
     </div>
   </div>
 );

@@ -19,7 +19,7 @@ export const loadHero = data => ({
 
 export const fetchHero = () => (dispatch) => {
   dispatch(loadStart());
-  return fetch('../../default-data.json')
+  fetch('../../default-data.json')
     .then(response => (
       response.json()
     ))
