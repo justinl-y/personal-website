@@ -7,6 +7,7 @@ export default {
     justifyContent: 'center',
     position: 'fixed',
     top: 0,
+    zIndex: 1,
     backgroundColor: CHARCOAL,
   },
 };

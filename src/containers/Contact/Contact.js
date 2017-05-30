@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.css';
 
-const Contact = ({ sectionContent }) => (
+const Contact = ({ sectionContent, divRef }) => (
   <div className={styles.component}>
-    <div className={styles.container}>
-      <i className="fa fa-telegram fa-3x" aria-hidden="true" />
+    <div className={styles.title} ref={divRef}>
+      <i className="fa fa-paper-plane fa-3x" aria-hidden="true" />
       <h2>{sectionContent.title}</h2>
+    </div>
+    <div className={styles.content}>
       <div className={styles.contactSections}>
         <div className={styles.contactSectionItem}>
           <ul className={styles.contactLinks}>
@@ -40,6 +42,7 @@ const Contact = ({ sectionContent }) => (
 );
 
 Contact.propTypes = {
+  divRef: PropTypes.func.isRequired,
   sectionContent: PropTypes.object.isRequired,
 };
 

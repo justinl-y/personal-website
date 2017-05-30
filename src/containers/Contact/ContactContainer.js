@@ -17,12 +17,13 @@ class ContactContainer extends Component {
     const sectionContent = this.props.content;
 
     return (
-      <div ref={divRef}>
+      <div>
         {
           isLoading ?
             <Loading />
           :
             <Contact
+              divRef={divRef}
               sectionContent={sectionContent}
             />
         }

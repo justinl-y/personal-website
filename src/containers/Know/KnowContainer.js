@@ -18,12 +18,13 @@ class KnowContainer extends Component {
     const sectionContent = this.props.content;
 
     return (
-      <div ref={divRef}>
+      <div>
         {
           isLoading ?
             <Loading />
           :
             <Know
+              divRef={divRef}
               sectionContent={sectionContent}
               randomKey={randomKey}
             />

@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.css';
 
-const Work = ({ sectionContent, randomKey }) => (
+const Work = ({ sectionContent, divRef, randomKey }) => (
   <div className={styles.component}>
-    <div className={styles.container}>
+    <div className={styles.title} ref={divRef}>
       <i className="fa fa-archive fa-3x" aria-hidden="true" />
       <h2 className={styles.headerStyle}>{sectionContent.title}</h2>
+    </div>
+    <div className={styles.content}>
       <div className={styles.work}>
         {
         sectionContent.items.map(item => (
@@ -50,6 +52,7 @@ const Work = ({ sectionContent, randomKey }) => (
 );
 
 Work.propTypes = {
+  divRef: PropTypes.func.isRequired,
   sectionContent: PropTypes.object.isRequired,
   randomKey: PropTypes.func.isRequired,
 };

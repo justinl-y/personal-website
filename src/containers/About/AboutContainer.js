@@ -17,12 +17,13 @@ class AboutContainer extends Component {
     const sectionContent = this.props.content;
 
     return (
-      <div ref={divRef}>
+      <div>
         {
           isLoading ?
             <Loading />
           :
             <About
+              divRef={divRef}
               sectionContent={sectionContent}
               randomKey={randomKey}
             />

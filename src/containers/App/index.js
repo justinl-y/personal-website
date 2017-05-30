@@ -33,8 +33,8 @@ const App = () => (
         render={() => <Main scrollTo="about" />}
       />
       <Route
-        path="/contact"
-        render={() => <Main scrollTo="contact" />}
+        path="/find"
+        render={() => <Main scrollTo="find" />}
       />
       <Route component={NotFound} />
     </Switch>

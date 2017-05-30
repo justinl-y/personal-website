@@ -13,13 +13,10 @@ export default (state = initialState, action) => {
     case LOAD_END_DO:
       return { ...state, isLoading: false };
     case LOAD_DO: {
-      const [primaryTitle, secondaryTitle] = action.payload.title;
-      const text = action.payload.content;
-
       const content = {
-        primaryTitle,
-        secondaryTitle,
-        text,
+        primaryTitle: action.payload.title,
+        quote: action.payload.quote,
+        text: action.payload.content,
       };
 
       return { ...state, content };

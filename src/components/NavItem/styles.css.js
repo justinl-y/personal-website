@@ -13,17 +13,11 @@ export default {
     fontWeight: 'bold',
     display: 'none',
   },
-  '.navLink:link': {
-    color: WHITE,
-  },
-  '.navLink:hover': {
+  '.navLink:link, .navLink:hover, .navLink:visited:hover': {
     color: SMOKE,
   },
   '.navLink:visited': {
     color: CLAY,
-  },
-  '.navLink:visited:hover': {
-    color: SMOKE,
   },
   '.selected': {
     color: `${BONDI} !important`,

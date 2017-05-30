@@ -15,8 +15,8 @@ const navItemsCentre = [
 ];
 
 const navItemsRight = [
-  { to: '/about', exact: false, title: 'About Me', icon: '<i class="fa fa-user-circle fa-1x" aria-hidden="true" />' },
-  { to: '/contact', exact: false, title: 'Contact Me', icon: '<i class="fa fa-telegram fa-1x" aria-hidden="true" />' },
+  { to: '/about', exact: false, title: 'About Me', icon: '<i class="fa fa-user fa-1x" aria-hidden="true" />' },
+  { to: '/find', exact: false, title: 'Find Me', icon: '<i class="fa fa-paper-plane fa-1x" aria-hidden="true" />' },
 ];
 
 const renderNavItems = navItems => (

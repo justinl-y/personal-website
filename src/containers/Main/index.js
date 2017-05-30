@@ -51,7 +51,7 @@ class Main extends Component {
       case 'work':
         this.workDivElement.scrollIntoView(scrollProperties);
         break;
-      case 'contact':
+      case 'find':
         this.contactDivElement.scrollIntoView(scrollProperties);
         break;
       default:
