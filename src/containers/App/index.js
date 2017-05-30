@@ -14,11 +14,7 @@ const App = () => (
       <Route
         exact
         path="/"
-        render={() => <Main />}
-      />
-      <Route
-        path="/about"
-        render={() => <Main scrollTo="about" />}
+        render={() => <Main scrollTo="hero" />}
       />
       <Route
         path="/do"
@@ -31,6 +27,10 @@ const App = () => (
       <Route
         path="/work"
         render={() => <Main scrollTo="work" />}
+      />
+      <Route
+        path="/about"
+        render={() => <Main scrollTo="about" />}
       />
       <Route
         path="/contact"

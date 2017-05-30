@@ -20,7 +20,7 @@ const Work = ({ sectionContent, randomKey }) => (
               <p>{item.summary.description}</p>
             </div>
             <div className="work-detail">
-              <div>
+              {/* <div>
                 <h4>{item.detail.tasks.title}</h4>
                 <ul className={styles.workList}>
                   {
@@ -29,7 +29,7 @@ const Work = ({ sectionContent, randomKey }) => (
                     ))
                   }
                 </ul>
-              </div>
+              </div>*/}
               <div>
                 <h4>{item.detail.technologies.title}</h4>
                 <ul className={styles.workList}>

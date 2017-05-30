@@ -1,15 +1,24 @@
 import {
   CHARCOAL,
-  LILAC,
+  WHITE,
+  CLAY,
+  SMOKE,
+  // BONDI,
 } from './styles/colour.config';
 import {
   FONT_AWESOME,
   FONT_SIZE,
   FONT_STACK_BASE,
-  FONT_STACK_HEADING,
+  FONT_STACK_HEADING_PRIMARY,
   LINE_HEIGHT_BASE,
 } from './styles/typography.config';
 // import { anchorColor } from '/util/css.util';
+// 'white, smoke, clay'
+export const anchorColour = (colour, hover = colour, visited = colour) => ({
+  '&': { colour },
+  '&:hover, &:visited:hover': { color: hover },
+  '&:visited': { color: visited },
+});
 
 export default [{
   /**
@@ -48,9 +57,9 @@ export default [{
     lineHeight: `${LINE_HEIGHT_BASE}rem`,
   },
   'h1, h2, h3, h4': {
-    color: LILAC,
-    fontFamily: FONT_STACK_HEADING.map(font => font.name).join(','),
-    fontWeight: 400,
+    color: CHARCOAL,
+    fontFamily: FONT_STACK_HEADING_PRIMARY.map(font => font.name).join(','),
+    fontWeight: 700,
     // fontWeight: 'inherit',
     // margin: '1.414rem 0 0.5rem',
     lineHeight: `${LINE_HEIGHT_BASE}rem`,
@@ -68,7 +77,7 @@ export default [{
     // fontSize: '1.333rem',
   },
   a: {
-    // ...anchorColor(LILAC),
+    ...anchorColour(WHITE, SMOKE, CLAY),
     textDecoration: 'none',
   },
 }];

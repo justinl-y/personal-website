@@ -1,6 +1,12 @@
+import { CHARCOAL } from '../../styles/colour.config';
+
 export default {
-  '.header': {
+  '.component': {
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
+    position: 'fixed',
+    top: 0,
+    backgroundColor: CHARCOAL,
   },
 };

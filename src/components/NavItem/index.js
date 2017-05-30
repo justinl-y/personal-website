@@ -11,12 +11,15 @@ const NavItem = ({ exact, to, title, icon }) => (
       exact={exact}
       to={to}
       activeClassName={styles.selected}
+      className={styles.navLink}
     >
-      <i
-        className={styles.navLinkIcon}
-        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(icon) }} // eslint-disable-line
-      />
-      <span className={styles.navLinkText}>{title}</span>
+      <div className={styles.navlinkItems}>
+        <i
+          className={styles.navLinkIcon}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(icon) }} // eslint-disable-line
+        />
+        <span className={styles.navLinkText}>{title}</span>
+      </div>
     </NavLink>
   </li>
 );
@@ -29,5 +32,3 @@ NavItem.propTypes = {
 };
 
 export default NavItem;
-
-// {title}</NavLink>

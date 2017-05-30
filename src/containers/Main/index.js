@@ -36,6 +36,9 @@ class Main extends Component {
     };
 
     switch (scrollTo) {
+      case 'hero':
+        this.heroDivElement.scrollIntoView(scrollProperties);
+        break;
       case 'about':
         this.aboutDivElement.scrollIntoView(scrollProperties);
         break;
@@ -58,11 +61,11 @@ class Main extends Component {
   render() {
     return (
       <div className="container">
-        <HeroContainer />
-        <AboutContainer divRef={el => (this.aboutDivElement = el)} />
+        <HeroContainer divRef={el => (this.heroDivElement = el)} />
         <DoContainer divRef={el => (this.doDivElement = el)} />
         <KnowContainer divRef={el => (this.knowDivElement = el)} />
         <WorkContainer divRef={el => (this.workDivElement = el)} />
+        <AboutContainer divRef={el => (this.aboutDivElement = el)} />
         <ContactContainer divRef={el => (this.contactDivElement = el)} />
       </div>
     );

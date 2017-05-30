@@ -18,7 +18,7 @@ class DoContainer extends Component {
     const sectionContent = this.props.content;
 
     return (
-      <div ref={divRef} >
+      <div ref={divRef}>
         {
           isLoading ?
             <Loading />
