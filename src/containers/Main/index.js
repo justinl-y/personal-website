@@ -6,7 +6,7 @@ import AboutContainer from '../../containers/About';
 import DoContainer from '../../containers/Do';
 import KnowContainer from '../../containers/Know';
 import WorkContainer from '../../containers/Work';
-import ContactContainer from '../../containers/Contact';
+import FindContainer from '../../containers/Find';
 
 // import styles from './styles.css';
 
@@ -66,7 +66,7 @@ class Main extends Component {
         <KnowContainer divRef={el => (this.knowDivElement = el)} />
         <WorkContainer divRef={el => (this.workDivElement = el)} />
         <AboutContainer divRef={el => (this.aboutDivElement = el)} />
-        <ContactContainer divRef={el => (this.contactDivElement = el)} />
+        <FindContainer divRef={el => (this.contactDivElement = el)} />
       </div>
     );
   }

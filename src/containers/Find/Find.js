@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.css';
 
-const Contact = ({ sectionContent, divRef }) => (
+const Find = ({ sectionContent, divRef }) => (
   <div className={styles.component}>
     <div className={styles.title} ref={divRef}>
       <i className="fa fa-paper-plane fa-3x" aria-hidden="true" />
       <h2>{sectionContent.title}</h2>
     </div>
     <div className={styles.content}>
-      <div className={styles.contactSections}>
-        <div className={styles.contactSectionItem}>
-          <ul className={styles.contactLinks}>
-            <li className={styles.contactLinkItems}>
+      <div className={styles.findSections}>
+        <div className={styles.findSectionItem}>
+          <ul className={styles.findtLinks}>
+            <li className={styles.findLinkItems}>
               <i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
               <a href={sectionContent.items.linkedIn.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.linkedIn.title}</a>
             </li>
@@ -23,7 +23,7 @@ const Contact = ({ sectionContent, divRef }) => (
             </li>
           </ul>
         </div>
-        <div className={styles.contactSectionItem}>
+        <div className={styles.findSectionItem}>
           <form className={styles.contactForm}>
             <label htmlFor="name">Your Name</label>
             <input id="name" type="text" />
@@ -41,9 +41,9 @@ const Contact = ({ sectionContent, divRef }) => (
   </div>
 );
 
-Contact.propTypes = {
+Find.propTypes = {
   divRef: PropTypes.func.isRequired,
   sectionContent: PropTypes.object.isRequired,
 };
 
-export default Contact;
+export default Find;

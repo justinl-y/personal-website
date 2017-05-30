@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Contact from './Contact';
+import Find from './Find';
 import Loading from '../../components/Loading';
-import { fetchContact } from '../../redux/modules/contactActions';
+import { fetchFind } from '../../redux/modules/findActions';
 
-class ContactContainer extends Component {
+class FindContainer extends Component {
   componentDidMount() {
-    this.props.fetchContact();
+    this.props.fetchFind();
   }
 
   render() {
@@ -22,7 +22,7 @@ class ContactContainer extends Component {
           isLoading ?
             <Loading />
           :
-            <Contact
+            <Find
               divRef={divRef}
               sectionContent={sectionContent}
             />
@@ -32,29 +32,29 @@ class ContactContainer extends Component {
   }
 }
 
-ContactContainer.defaultProps = {
+FindContainer.defaultProps = {
   content: {},
 };
 
-ContactContainer.propTypes = {
+FindContainer.propTypes = {
   divRef: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  fetchContact: PropTypes.func.isRequired,
+  fetchFind: PropTypes.func.isRequired,
   content: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  isLoading: state.contact.isLoading,
-  content: state.contact.content,
+  isLoading: state.find.isLoading,
+  content: state.find.content,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchContact: () => {
-    dispatch(fetchContact());
+  fetchFind: () => {
+    dispatch(fetchFind());
   },
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ContactContainer);
+)(FindContainer);

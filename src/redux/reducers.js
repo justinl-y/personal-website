@@ -4,7 +4,7 @@ import aboutReducer from './modules/aboutReducer';
 import doReducer from './modules/doReducer';
 import knowReducer from './modules/knowReducer';
 import workReducer from './modules/workReducer';
-import contactReducer from './modules/contactReducer';
+import findReducer from './modules/findReducer';
 import footerReducer from './modules/footerReducer';
 
 const combinedReducers = combineReducers({
@@ -13,7 +13,7 @@ const combinedReducers = combineReducers({
   do: doReducer,
   know: knowReducer,
   work: workReducer,
-  contact: contactReducer,
+  find: findReducer,
   footer: footerReducer,
 });
 

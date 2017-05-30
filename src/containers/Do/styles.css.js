@@ -20,8 +20,8 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: '5rem',
-    paddingBottom: '5rem',
+    paddingTop: '7.5rem',
+    paddingBottom: '7.5rem',
     width: '100%',
     background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${DO_IMAGE_SRC}) repeat-x center center / cover`,
   },
@@ -43,12 +43,12 @@ export default {
   },
   [BREAKPOINTS.large]: {
     '.quote': {
-      paddingTop: '7rem',
-      paddingBottom: '7rem',
+      paddingTop: '7.5rem',
+      paddingBottom: '7.5rem',
     },
     '.title': {
-      paddingTop: '7rem',
-      paddingBottom: '7rem',
+      paddingTop: '10rem',
+      paddingBottom: '10rem',
     },
     '.content': {
       maxWidth: CONTAINER_WIDTH,
