@@ -12,12 +12,12 @@ const Find = ({ sectionContent, divRef }) => (
     <div className={styles.content}>
       <div className={styles.findSections}>
         <div className={styles.findSectionItem}>
-          <ul className={styles.findtLinks}>
+          <ul className={styles.findLinks}>
             <li className={styles.findLinkItems}>
               <i className="fa fa-linkedin-square fa-2x" aria-hidden="true" />
               <a href={sectionContent.items.linkedIn.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.linkedIn.title}</a>
             </li>
-            <li className={styles.contactLinkItems}>
+            <li className={styles.findLinkItems}>
               <i className="fa fa-github fa-2x" aria-hidden="true" />
               <a href={sectionContent.items.github.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.github.title}</a>
             </li>

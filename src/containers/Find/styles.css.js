@@ -1,4 +1,8 @@
-import { CONTAINER_WIDTH } from '../../styles/layout.config';
+import {
+  TITLE_PADDING,
+  CONTENT_PADDING,
+  CONTAINER_WIDTH,
+} from '../../styles/layout.config';
 import BREAKPOINTS from '../../styles/breakpoint.config';
 import { FONT_SIZE } from '../../styles/typography.config';
 import { FIND_IMAGE_SRC } from '../../styles/asset.config';
@@ -13,10 +17,14 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: '7.5rem',
-    paddingBottom: '7.5rem',
+    paddingTop: `${TITLE_PADDING.small}rem`,
+    paddingBottom: `${TITLE_PADDING.small}rem`,
     width: '100%',
     background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${FIND_IMAGE_SRC}) repeat-x center center / cover`,
+  },
+  '.content': {
+    paddingTop: `${CONTENT_PADDING.small}rem`,
+    paddingBottom: `${CONTENT_PADDING.small}rem`,
   },
   '.findSections': {
     display: 'flex',
@@ -37,6 +45,10 @@ export default {
     '.content': {
       fontSize: FONT_SIZE.base,
     },
+    '.title': {
+      paddingTop: `${TITLE_PADDING.medium}rem`,
+      paddingBottom: `${TITLE_PADDING.medium}rem`,
+    },
     '.findSections': {
       flexFlow: 'row nowrap',
     },
@@ -46,13 +58,13 @@ export default {
   },
   [BREAKPOINTS.large]: {
     '.title': {
-      paddingTop: '10rem',
-      paddingBottom: '10rem',
+      paddingTop: `${TITLE_PADDING.large}rem`,
+      paddingBottom: `${TITLE_PADDING.large}rem`,
     },
     '.content': {
       maxWidth: CONTAINER_WIDTH,
-      paddingTop: '7.5rem',
-      paddingBottom: '7.5rem',
+      paddingTop: `${CONTENT_PADDING.large}rem`,
+      paddingBottom: `${CONTENT_PADDING.large}rem`,
     },
   },
 };
