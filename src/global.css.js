@@ -8,6 +8,7 @@ import {
 import {
   FONT_AWESOME,
   FONT_SIZE,
+  FONT_SIZE_HEADING,
   FONT_STACK_BASE,
   FONT_STACK_HEADING_PRIMARY,
   FONT_STACK_HEADING_SECONDARY,
@@ -74,8 +75,9 @@ export default [{
     // fontSize: '2.5rem',
   },
   h2: {
-    fontSize: '2.5rem',
-    color: `${SMOKE}`,
+    // fontSize: '2.5rem',
+    fontSize: `${FONT_SIZE_HEADING.small}rem`,
+    color: SMOKE,
   },
   h3: {
     // fontSize: '1.125rem',

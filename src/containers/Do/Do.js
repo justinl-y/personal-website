@@ -6,13 +6,13 @@ import styles from './styles.css';
 const Do = ({ sectionContent, divRef, randomKey }) => (
   <div className={styles.component}>
     <div className={styles.quote}>
-      <h2 className={styles.quoteHeader}>
+      <h2>
         <span className={styles.lineBreak}>{sectionContent.quotePartOne}</span>
         <span className={styles.lineBreak}>{sectionContent.quotePartTwo}</span>
       </h2>
     </div>
     <div className={styles.title} ref={divRef}>
-      <i className={'fa fa-cogs fa-3x'} aria-hidden="true" />
+      <i className={'fa fa-cogs'} aria-hidden="true" />
       <h2>{sectionContent.primaryTitle}</h2>
     </div>
     <div className={styles.content}>

@@ -2,10 +2,22 @@ exports.FONT_AWESOME = {
   '@import': 'url(http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css)',
 };
 
+exports.FONT_AWESOME_ICON_SIZE = {
+  small: 2.5,
+  medium: 3,
+  large: 3.5,
+};
+
 // Base font size in px.
 exports.FONT_SIZE = {
   mobile: 14,
   base: 16,
+};
+
+exports.FONT_SIZE_HEADING = {
+  small: 2,
+  medium: 2.5,
+  large: 3,
 };
 
 // fonts

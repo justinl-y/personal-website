@@ -16,7 +16,7 @@ export default {
   '.headerTextPrimary': {
     fontSize: '2.5rem',
     color: SMOKE,
-    lineHeight: 1,
+    lineHeight: 1.2,
   },
   '.headerTextSecondary': {
     fontSize: '1.25rem',

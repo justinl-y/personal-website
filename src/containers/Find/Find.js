@@ -6,7 +6,7 @@ import styles from './styles.css';
 const Find = ({ sectionContent, divRef }) => (
   <div className={styles.component}>
     <div className={styles.title} ref={divRef}>
-      <i className="fa fa-paper-plane fa-3x" aria-hidden="true" />
+      <i className="fa fa-paper-plane" aria-hidden="true" />
       <h2>{sectionContent.title}</h2>
     </div>
     <div className={styles.content}>
@@ -18,7 +18,7 @@ const Find = ({ sectionContent, divRef }) => (
               <a href={sectionContent.items.linkedIn.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.linkedIn.title}</a>
             </li>
             <li className={styles.findLinkItems}>
-              <i className="fa fa-github fa-2x" aria-hidden="true" />
+              <i className="fa fa-github" aria-hidden="true" />
               <a href={sectionContent.items.github.url} target="_blank" rel="noopener noreferrer">{sectionContent.items.github.title}</a>
             </li>
           </ul>
