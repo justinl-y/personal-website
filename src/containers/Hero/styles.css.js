@@ -1,5 +1,5 @@
 import BREAKPOINTS from '../../styles/breakpoint.config';
-import { WHITE, CHARCOAL, CLAY } from '../../styles/colour.config';
+import { CHARCOAL, CLAY, SMOKE } from '../../styles/colour.config';
 import { HERO_IMAGE_SRC } from '../../styles/asset.config';
 
 export default {
@@ -15,12 +15,12 @@ export default {
   },
   '.headerTextPrimary': {
     fontSize: '2.5rem',
-    color: WHITE,
+    color: SMOKE,
     lineHeight: 1,
   },
   '.headerTextSecondary': {
     fontSize: '1.25rem',
-    color: WHITE,
+    color: SMOKE,
   },
   '.lineBreak': {
     display: 'inline-block',
@@ -37,7 +37,7 @@ export default {
     marginBottom: 0,
   },
   '.iconBackground': {
-    color: 'white',
+    color: SMOKE,
   },
   '.linkRef:link, .linkRef:visited': {
     color: CHARCOAL,

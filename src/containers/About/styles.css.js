@@ -6,6 +6,7 @@ import {
 import BREAKPOINTS from '../../styles/breakpoint.config';
 import { FONT_SIZE } from '../../styles/typography.config';
 import { ABOUT_IMAGE_SRC } from '../../styles/asset.config';
+import { SMOKE } from '../../styles/colour.config';
 
 export default {
   '.component': {
@@ -21,6 +22,7 @@ export default {
     paddingBottom: `${TITLE_PADDING.small}rem`,
     width: '100%',
     background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${ABOUT_IMAGE_SRC}) repeat-x center center / cover`,
+    color: SMOKE,
   },
   '.content': {
     paddingTop: `${CONTENT_PADDING.small}rem`,

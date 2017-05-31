@@ -10,11 +10,11 @@ import {
   FONT_SIZE,
   FONT_STACK_BASE,
   FONT_STACK_HEADING_PRIMARY,
+  FONT_STACK_HEADING_SECONDARY,
   LINE_HEIGHT_BASE,
 } from './styles/typography.config';
-// import { anchorColor } from '/util/css.util';
-// 'white, smoke, clay'
-export const anchorColour = (colour, hover = colour, visited = colour) => ({
+
+const anchorColour = (colour, hover = colour, visited = colour) => ({
   '&': { colour },
   '&:hover, &:visited:hover': { color: hover },
   '&:visited': { color: visited },
@@ -28,6 +28,12 @@ export default [{
    */
   ...FONT_AWESOME,
   ...FONT_STACK_BASE
+      .filter(font => font.url !== null)
+      .map(font => `${font.url};`),
+  ...FONT_STACK_HEADING_PRIMARY
+      .filter(font => font.url !== null)
+      .map(font => `${font.url};`),
+  ...FONT_STACK_HEADING_SECONDARY
       .filter(font => font.url !== null)
       .map(font => `${font.url};`),
   html: {
@@ -65,10 +71,11 @@ export default [{
     lineHeight: `${LINE_HEIGHT_BASE}rem`,
   },
   h1: {
-    // fontSize: '2rem',
+    // fontSize: '2.5rem',
   },
   h2: {
-    // fontSize: '1.5rem',
+    fontSize: '2.5rem',
+    color: `${SMOKE}`,
   },
   h3: {
     // fontSize: '1.125rem',

@@ -6,7 +6,7 @@ import {
 import BREAKPOINTS from '../../styles/breakpoint.config';
 import { FONT_SIZE } from '../../styles/typography.config';
 import { DO_IMAGE_SRC } from '../../styles/asset.config';
-import { WHITE } from '../../styles/colour.config';
+import { SMOKE, CLAY } from '../../styles/colour.config';
 
 export default {
   '.component': {
@@ -15,11 +15,18 @@ export default {
     alignItems: 'center',
   },
   '.quote': {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    width: '100%',
+    backgroundColor: CLAY,
     paddingTop: `${CONTENT_PADDING.small}rem`,
     paddingBottom: `${CONTENT_PADDING.small}rem`,
+  },
+  '.quoteHeader': {
+    textAlign: 'center',
+    fontFamily: 'Roboto Slab',
+    lineHeight: 1.3,
+  },
+  '.lineBreak': {
+    display: 'inline-block',
   },
   '.title': {
     display: 'flex',
@@ -29,7 +36,7 @@ export default {
     paddingBottom: `${TITLE_PADDING.small}rem`,
     width: '100%',
     background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${DO_IMAGE_SRC}) repeat-x center center / cover`,
-    color: `${WHITE}`,
+    color: SMOKE,
   },
   '.content': {
     paddingTop: `${CONTENT_PADDING.small}rem`,

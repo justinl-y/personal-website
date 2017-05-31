@@ -13,9 +13,12 @@ export default (state = initialState, action) => {
     case LOAD_END_DO:
       return { ...state, isLoading: false };
     case LOAD_DO: {
+      const [quotePartOne, quotePartTwo] = action.payload.quote;
+
       const content = {
         primaryTitle: action.payload.title,
-        quote: action.payload.quote,
+        quotePartOne,
+        quotePartTwo,
         text: action.payload.content,
       };
 

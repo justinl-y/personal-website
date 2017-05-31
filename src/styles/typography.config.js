@@ -14,10 +14,17 @@ exports.FONT_SIZE = {
   url: '@import url(https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,300i,400,400i,700,700i)',
 };*/
 
-const ROBOTO = {
+/* const ROBOTO = {
   name: 'Roboto',
   url: {
     '@import': 'url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i)',
+  },
+};*/
+
+const RALEWAY = {
+  name: 'Raleway',
+  url: {
+    '@import': 'url(https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i)',
   },
 };
 
@@ -45,6 +52,11 @@ const SANS_SERIF = {
   url: null,
 };
 
+/* const SERIF = {
+  name: 'serif',
+  url: null,
+};*/
+
 const TIMES_NEW_ROMAN = {
   name: 'Times New Roman',
   url: null,
@@ -52,18 +64,18 @@ const TIMES_NEW_ROMAN = {
 
 // font constants
 exports.FONT_STACK_BASE = [
-  ROBOTO,
+  RALEWAY,
   SANS_SERIF,
 ];
 
 exports.FONT_STACK_HEADING_PRIMARY = [
-  ROBOTO_SLAB,
-  TIMES_NEW_ROMAN,
+  MONTSERRAT,
+  SANS_SERIF,
 ];
 
 exports.FONT_STACK_HEADING_SECONDARY = [
-  MONTSERRAT,
-  SANS_SERIF,
+  ROBOTO_SLAB,
+  TIMES_NEW_ROMAN,
 ];
 
 exports.FONT_STACK_MONO = [
