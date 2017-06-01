@@ -12,8 +12,8 @@ const Know = ({ sectionContent, divRef, randomKey }) => (
     <div className={styles.content}>
       <div className={styles.skills}>
         {
-          sectionContent.items.map(item =>
-            (<div key={randomKey()} className={styles.skillType}>
+          sectionContent.items.map(item => (
+            <div key={randomKey()} className={styles.skillType}>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
               <ul className={styles.skillList}>
@@ -26,8 +26,8 @@ const Know = ({ sectionContent, divRef, randomKey }) => (
                     </li>))
                 }
               </ul>
-            </div>),
-          )
+            </div>
+          ))
         }
       </div>
     </div>
