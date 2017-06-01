@@ -46,6 +46,7 @@ export default {
     paddingTop: `${CONTENT_PADDING.small}rem`,
     paddingBottom: `${CONTENT_PADDING.small}rem`,
     textAlign: 'center',
+    maxWidth: '85%',
   },
   '.doItems:last-child': {
     marginBottom: 0,
@@ -84,7 +85,7 @@ export default {
       fontSize: `${FONT_SIZE_HEADING.large}rem`,
     },
     '.content': {
-      maxWidth: CONTAINER_WIDTH,
+      maxWidth: CONTAINER_WIDTH * 0.85,
       paddingTop: `${CONTENT_PADDING.large}rem`,
       paddingBottom: `${CONTENT_PADDING.large}rem`,
     },

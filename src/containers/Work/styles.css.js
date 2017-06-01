@@ -77,6 +77,7 @@ export default {
     minHeight: '50%',
     padding: '1rem',
     overflow: 'hidden',
+    textAlign: 'center',
 
     backgroundColor: CLAY,
     color: SMOKE,
