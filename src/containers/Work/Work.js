@@ -54,6 +54,3 @@ Work.propTypes = {
 };
 
 export default Work;
-
-// <img src={item.summary.image} alt={item.summary.title} />
-// background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${WORK_IMAGE_SRC}) repeat-x center center / cover,

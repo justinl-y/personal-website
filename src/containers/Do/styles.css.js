@@ -24,6 +24,7 @@ export default {
     textAlign: 'center',
     fontFamily: 'Roboto Slab',
     lineHeight: 1.3,
+    fontSize: '1.75rem',
   },
   '.lineBreak': {
     display: 'inline-block',

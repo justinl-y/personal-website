@@ -6,13 +6,14 @@ import {
 import BREAKPOINTS from '../../styles/breakpoint.config';
 import { FONT_SIZE, FONT_AWESOME_ICON_SIZE, FONT_SIZE_HEADING } from '../../styles/typography.config';
 import { KNOW_IMAGE_SRC } from '../../styles/asset.config';
-import { SMOKE } from '../../styles/colour.config';
+import { SMOKE, CLAY } from '../../styles/colour.config';
 
 export default {
   '.component': {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: SMOKE,
   },
   '.title': {
     display: 'flex',
@@ -27,22 +28,38 @@ export default {
   '.title i': {
     fontSize: `${FONT_AWESOME_ICON_SIZE.small}rem`,
   },
-  '.content': {
-    paddingTop: `${CONTENT_PADDING.small}rem`,
-    paddingBottom: `${CONTENT_PADDING.small}rem`,
-  },
   '.skills': {
     display: 'flex',
     flexFlow: 'column nowrap',
-    textAlign: 'center',
   },
-  '.skillType': {
+  '.skillItem': {
     display: 'flex',
+    height: '25rem',
+
+    paddingTop: '0.75rem',
+    paddingBottom: '0.75rem',
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
+  },
+  '.skillItem:first-child': {
+    paddingTop: '1.5rem',
+  },
+  '.skillItem:last-child': {
+    paddingBottom: '1.5rem',
+  },
+  '.skillDetail': {
+    width: '100%',
+    border: '1px solid black',
     flexFlow: 'column nowrap',
+    backgroundColor: CLAY,
+
+    textAlign: 'center',
+    padding: '1rem',
+    overflow: 'hidden',
   },
   '.skillList': {
-    padding: 0,
-    marginBottom: 0,
+    paddingLeft: 0,
+    margin: 0,
   },
   '.skillItems': {
     listStyleType: 'none',
@@ -59,13 +76,28 @@ export default {
       fontSize: `${FONT_SIZE_HEADING.medium}rem`,
     },
     '.content': {
-      fontSize: FONT_SIZE.base,
+      // fontSize: FONT_SIZE.base,
     },
     '.skills': {
       flexFlow: 'row wrap',
     },
-    '.skillType': {
+    '.skillItem': {
       flexBasis: '50%',
+    },
+
+    '.skillItem:nth-child(odd)': {
+      paddingLeft: '1.5rem',
+      paddingRight: '0.75rem',
+    },
+    '.skillItem:nth-child(even)': {
+      paddingLeft: '0.75rem',
+      paddingRight: '1.5rem',
+    },
+    '.skillItem:nth-child(-n + 2)': {
+      paddingTop: '1.5rem',
+    },
+    '.skillItem:nth-child(n + 3)': {
+      paddingBottom: '1.5rem',
     },
   },
   [BREAKPOINTS.large]: {
@@ -84,8 +116,27 @@ export default {
       paddingTop: `${CONTENT_PADDING.large}rem`,
       paddingBottom: `${CONTENT_PADDING.large}rem`,
     },
-    '.skillType': {
+    '.skillItem': {
       flexBasis: '25%',
+    },
+    '.skillItem:first-child': {
+      paddingLeft: '1.5rem',
+      paddingRight: '0.75rem',
+    },
+    '.skillItem:last-child': {
+      paddingRight: '1.5rem',
+      paddingLeft: '0.75rem',
+    },
+    '.skillItem:nth-child(-n + 4)': {
+      paddingTop: '1.5rem',
+      paddingBottom: '1.5rem',
+    },
+    '.skillItem:nth-child(n+2):nth-child(-n+3)': {
+      paddingLeft: '0.75rem',
+      paddingRight: '0.75rem',
+    },
+    '.skillDetail h3': {
+      marginTop: 0,
     },
   },
 };

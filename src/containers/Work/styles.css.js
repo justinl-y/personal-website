@@ -1,5 +1,6 @@
 import {
   TITLE_PADDING,
+  CONTENT_PADDING,
   CONTAINER_WIDTH,
 } from '../../styles/layout.config';
 import BREAKPOINTS from '../../styles/breakpoint.config';
@@ -54,6 +55,7 @@ export default {
     flex: '0 0 100%',
     maxHeight: '50%',
     minHeight: '50%',
+    border: `1px solid ${CLAY}`,
   },
   '.itemImage': {
     height: '100%',
@@ -136,6 +138,8 @@ export default {
     },
     '.content': {
       maxWidth: CONTAINER_WIDTH,
+      paddingTop: `${CONTENT_PADDING.large}rem`,
+      paddingBottom: `${CONTENT_PADDING.large}rem`,
     },
     '.workItem': {
       flexBasis: '33.333%',

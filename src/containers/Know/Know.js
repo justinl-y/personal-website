@@ -13,19 +13,18 @@ const Know = ({ sectionContent, divRef, randomKey }) => (
       <div className={styles.skills}>
         {
           sectionContent.items.map(item => (
-            <div key={randomKey()} className={styles.skillType}>
-              <h3>{item.title}</h3>
-              <p>{item.summary}</p>
-              <ul className={styles.skillList}>
-                {
-                  item.skills.map(skill => (
-                    <li
-                      key={randomKey()}
-                      className={styles.skillItems}
-                    >{skill}
-                    </li>))
-                }
-              </ul>
+            <div key={randomKey()} className={styles.skillItem}>
+              <div className={styles.skillDetail}>
+                <h3>{item.title}</h3>
+                <p>{item.summary}</p>
+                <ul className={styles.skillList}>
+                  {
+                    item.skills.map(skill => (
+                      <li key={randomKey()} className={styles.skillItems}>{skill}</li>
+                    ))
+                  }
+                </ul>
+              </div>
             </div>
           ))
         }
