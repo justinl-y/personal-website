@@ -6,13 +6,14 @@ import {
 import BREAKPOINTS from '../../styles/breakpoint.config';
 import { FONT_SIZE, FONT_AWESOME_ICON_SIZE, FONT_SIZE_HEADING } from '../../styles/typography.config';
 import { WORK_IMAGE_SRC } from '../../styles/asset.config';
-import { SMOKE } from '../../styles/colour.config';
+import { SMOKE, CLAY, CHARCOAL } from '../../styles/colour.config';
 
 export default {
   '.component': {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: CHARCOAL,
   },
   '.title': {
     display: 'flex',
@@ -34,21 +35,72 @@ export default {
   '.work': {
     display: 'flex',
     flexFlow: 'column nowrap',
-    textAlign: 'center',
-  },
+    // textAlign: 'center',
+  }, // <---
+
   '.workItem': {
+    // display: 'flex',
+    // flexFlow: 'column nowrap',
+    border: `1px solid ${CLAY}`,
+    // padding: '1rem, 0.5rem',
+    // display: 'flex',
+    // alignItems: 'flex-start',
+    // justifyContent: 'flex-start',
+    // flexBasis: '50%',
+    // overflow: 'hidden',
+    // backgroundColor: CHARCOAL,
+  },
+
+  '.workContainer': {
+    // width: '100%',
+    // height: '90%',
+    // padding: '1rem',
+    // flexFlow: 'column nowrap',
+    // flexBasis: '50%',
+    // flex: '0 1 50%',
+    // display: 'flex',
+    height: '100%',
+    backgroundColor: CHARCOAL,
+    padding: '1rem',
+  },
+
+  '.workItemImage': {
+    // flex: '0 0 50%',
     display: 'flex',
     flexFlow: 'column nowrap',
+    // height: '100%',
   },
-  '.workList': {
-    padding: 0,
+  '.itemImage': {
+    flex: '0 0 50%',
+    height: '100%',
+    paddingTop: `${CONTENT_PADDING.small}rem`,
+    paddingBottom: `${CONTENT_PADDING.small}rem`,
+    display: 'flex',
+    justifyContent: 'center',
+    // height: '100%',
   },
-  '.workList:last-child': {
-    marginBottom: 0,
+  '.itemImage h3': {
+    color: SMOKE,
   },
-  '.workItems': {
-    listStyleType: 'none',
+
+  '.workItemText': {
+    flex: '0 0 50%',
+    // display: 'flex',
+    height: '100%',
+    // fontSize: '0.5rem',
+    // paddingBottom: '1rem',
+    // overflow: 'hidden',
+    padding: '1rem',
+    color: CLAY,
   },
+  '.workItemText h4': {
+    marginTop: '1rem',
+    marginBottom: '1rem',
+    textAlign: 'center',
+    color: SMOKE,
+  },
+
+
   [BREAKPOINTS.medium]: {
     '.content': {
       fontSize: FONT_SIZE.base,
@@ -68,7 +120,7 @@ export default {
     },
     '.workItem': {
       flexBasis: '50%',
-    },
+    }, // <---
   },
   [BREAKPOINTS.large]: {
     '.title': {
@@ -87,7 +139,12 @@ export default {
       paddingBottom: `${CONTENT_PADDING.large}rem`,
     },
     '.workItem': {
-      flexBasis: '33%',
+      flexBasis: '33.333%',
+    }, // <---
+
+    '.itemImage': {
+      paddingTop: `${CONTENT_PADDING.large}rem`,
+      paddingBottom: `${CONTENT_PADDING.large}rem`,
     },
   },
 };

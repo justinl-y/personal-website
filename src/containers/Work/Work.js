@@ -14,33 +14,42 @@ const Work = ({ sectionContent, divRef, randomKey }) => (
         {
         sectionContent.items.map(item => (
           <div key={randomKey()} className={styles.workItem}>
-            <div className="work-summary">
-              <a href={item.summary.url} target="_blank" rel="noopener noreferrer">
-                <img src={item.summary.image} alt={item.summary.title} />
-              </a>
-              <h3>{item.summary.title}</h3>
-              <p>{item.summary.description}</p>
-            </div>
-            <div className="work-detail">
-              {/* <div>
-                <h4>{item.detail.tasks.title}</h4>
-                <ul className={styles.workList}>
-                  {
-                    item.detail.tasks.items.map(task => (
-                      <li key={randomKey()}>{task}</li>
-                    ))
-                  }
-                </ul>
-              </div>*/}
-              <div>
-                <h4>{item.detail.technologies.title}</h4>
-                <ul className={styles.workList}>
-                  {
-                    item.detail.technologies.items.map(technology => (
-                      <li key={randomKey()} className={styles.workItems}>{technology}</li>
-                    ))
-                  }
-                </ul>
+            <div className={styles.workContainer}>
+              <div className={styles.workItemImage}>
+                <a href={item.summary.url} target="_blank" rel="noopener noreferrer">
+                  <div
+                    className={styles.itemImage}
+                    style={{ background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${item.summary.image}) repeat-x center top / cover` }}
+                  >
+                    <h3>{item.summary.title}</h3>
+                  </div>
+                </a>
+              </div>
+              <div className={styles.workItemText}>
+                <div>
+                  <p>{item.summary.description}</p>
+                  {/* <div>
+                    <h4>{item.detail.tasks.title}</h4>
+                    <ul className={styles.workList}>
+                      {
+                        item.detail.tasks.items.map(task => (
+                          <li key={randomKey()}>{task}</li>
+                        ))
+                      }
+                    </ul>
+                  </div>*/}
+                </div>
+                <div>
+                  <h4>{item.detail.technologies.title}</h4>
+                  <p>{item.detail.technologies.items.join(', ')}</p>
+                  { /* <ul className={styles.workList}>
+                    {
+                      item.detail.technologies.items.map(technology => (
+                        <li key={randomKey()} className={styles.workItems}>{technology}</li>
+                      ))
+                    }
+                  </ul>*/}
+                </div>
               </div>
             </div>
           </div>
@@ -58,3 +67,6 @@ Work.propTypes = {
 };
 
 export default Work;
+
+// <img src={item.summary.image} alt={item.summary.title} />
+// background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${WORK_IMAGE_SRC}) repeat-x center center / cover,

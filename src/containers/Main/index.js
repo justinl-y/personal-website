@@ -17,7 +17,7 @@ class Main extends Component {
     if (scrollTo) {
       setTimeout(() => {
         this.scrollToDiv(scrollTo);
-      }, 300);
+      }, 500);
     }
   }
 
