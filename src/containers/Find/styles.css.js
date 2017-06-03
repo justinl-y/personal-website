@@ -6,7 +6,7 @@ import {
 import BREAKPOINTS from '../../styles/breakpoint.config';
 import { FONT_SIZE, FONT_AWESOME_ICON_SIZE, FONT_SIZE_HEADING } from '../../styles/typography.config';
 import { FIND_IMAGE_SRC } from '../../styles/asset.config';
-import { SMOKE, CLAY } from '../../styles/colour.config';
+import { SMOKE } from '../../styles/colour.config';
 
 export default {
   '.component': {

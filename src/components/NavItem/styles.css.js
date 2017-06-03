@@ -1,5 +1,5 @@
 import BREAKPOINTS from '../../styles/breakpoint.config';
-import { WHITE, CLAY, SMOKE, BONDI } from '../../styles/colour.config';
+import { CLAY, SMOKE, BONDI } from '../../styles/colour.config';
 
 export default {
   '.navItem': {
@@ -39,10 +39,6 @@ export default {
     },
     '.navLinkIcon': {
       display: 'inline',
-      // marginRight: 7.5,
-    },
-    '.navLinkIcon:last-child': {
-      // marginRight: 0,
     },
   },
 };

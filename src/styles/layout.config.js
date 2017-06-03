@@ -1,5 +1,4 @@
-const CONTAINER = 1250;
-exports.CONTAINER_WIDTH = `${CONTAINER}px`;
+exports.CONTAINER_WIDTH = 1250;
 
 exports.TITLE_PADDING = {
   small: 7.5,

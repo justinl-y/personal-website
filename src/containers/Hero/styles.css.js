@@ -6,7 +6,7 @@ export default {
   '.container': {
     height: '100vh',
     width: '100%',
-    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${HERO_IMAGE_SRC}) repeat-x center center / cover`,
+    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${HERO_IMAGE_SRC}) no-repeat center center / auto 100% `, // / fixed / cover
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -46,6 +46,9 @@ export default {
     color: CLAY,
   },
   [BREAKPOINTS.medium]: {
+    '.container': {
+      background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${HERO_IMAGE_SRC}) no-repeat center center / cover`, // / fixed / cover
+    },
     '.headerTextPrimary': {
       fontSize: '3.25rem',
     },

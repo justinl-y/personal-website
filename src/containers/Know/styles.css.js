@@ -4,9 +4,9 @@ import {
   CONTAINER_WIDTH,
 } from '../../styles/layout.config';
 import BREAKPOINTS from '../../styles/breakpoint.config';
-import { FONT_SIZE, FONT_AWESOME_ICON_SIZE, FONT_SIZE_HEADING } from '../../styles/typography.config';
+import { FONT_AWESOME_ICON_SIZE, FONT_SIZE_HEADING } from '../../styles/typography.config';
 import { KNOW_IMAGE_SRC } from '../../styles/asset.config';
-import { SMOKE, CLAY } from '../../styles/colour.config';
+import { SMOKE, CLAY, SAFFRON } from '../../styles/colour.config';
 
 export default {
   '.component': {
@@ -22,7 +22,7 @@ export default {
     paddingTop: `${TITLE_PADDING.small}rem`,
     paddingBottom: `${TITLE_PADDING.small}rem`,
     width: '100%',
-    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${KNOW_IMAGE_SRC}) repeat-x center center / cover`,
+    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${KNOW_IMAGE_SRC}) no-repeat center center / cover`,
     color: SMOKE,
   },
   '.title i': {
@@ -34,7 +34,7 @@ export default {
   },
   '.skillItem': {
     display: 'flex',
-    height: '25rem',
+    height: '30rem',
 
     paddingTop: '0.75rem',
     paddingBottom: '0.75rem',
@@ -49,13 +49,17 @@ export default {
   },
   '.skillDetail': {
     width: '100%',
-    border: '1px solid black',
+    // border: '1px solid black',
     flexFlow: 'column nowrap',
     backgroundColor: CLAY,
+    color: SMOKE,
 
     textAlign: 'center',
     padding: '1rem',
     overflow: 'hidden',
+  },
+  '.skillDetail h3': {
+    color: SAFFRON,
   },
   '.skillList': {
     paddingLeft: 0,

@@ -6,14 +6,14 @@ import {
 import BREAKPOINTS from '../../styles/breakpoint.config';
 import { FONT_AWESOME_ICON_SIZE, FONT_SIZE_HEADING } from '../../styles/typography.config';
 import { WORK_IMAGE_SRC } from '../../styles/asset.config';
-import { SMOKE, CLAY, CHARCOAL, BONDI } from '../../styles/colour.config';
+import { SMOKE, CLAY, CHARCOAL, BONDI, ICEGREY } from '../../styles/colour.config';
 
 export default {
   '.component': {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: CHARCOAL,
+    backgroundColor: CHARCOAL, //SMOKE
   },
   '.title': {
     display: 'flex',
@@ -43,7 +43,7 @@ export default {
     paddingLeft: '1.5rem',
     paddingRight: '1.5rem',
 
-    backgroundColor: CHARCOAL,
+    // backgroundColor: CHARCOAL,
   },
   '.workItem:first-child': {
     paddingTop: '1.5rem',
@@ -55,7 +55,7 @@ export default {
     flex: '0 0 100%',
     maxHeight: '50%',
     minHeight: '50%',
-    border: `1px solid ${CLAY}`,
+    // border: `1px solid ${CLAY}`,
   },
   '.itemImage': {
     height: '100%',
@@ -80,7 +80,7 @@ export default {
     textAlign: 'center',
 
     backgroundColor: CLAY,
-    color: SMOKE,
+    color: ICEGREY,
   },
   '.workItemText p': {
     marginTop: 0,

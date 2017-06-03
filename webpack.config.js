@@ -12,8 +12,8 @@ const styleLoaders = [
     loader: 'postcss-loader',
     options: {
       plugins: () => [
-        require('autoprefixer')({ browsers: 'last 2 versions' }),
         require('postcss-nesting'),
+        require('autoprefixer')({ browsers: 'last 2 versions' }),
       ],
     },
   },
@@ -65,26 +65,6 @@ const config = {
         }],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        exclude: [/node_modules/],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-          },
-        }],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        exclude: [/node_modules/],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-          },
-        }],
-      },
-      {
         test: /\.js$/,
         enforce: 'pre',
         exclude: [/node_modules/],
@@ -107,6 +87,16 @@ const config = {
               'es2016',
               'es2017',
             ],
+          },
+        }],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        exclude: [/node_modules/],
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
           },
         }],
       },

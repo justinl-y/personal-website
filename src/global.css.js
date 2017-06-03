@@ -6,7 +6,7 @@ import {
   // BONDI,
 } from './styles/colour.config';
 import {
-  FONT_AWESOME,
+  // FONT_AWESOME,
   FONT_SIZE,
   FONT_SIZE_HEADING,
   FONT_STACK_BASE,
@@ -27,7 +27,7 @@ export default [{
    * See: http://codepen.io/absolutholz/post/html-and-body-element-height-100
    * ========================================================================
    */
-  ...FONT_AWESOME,
+  // ...FONT_AWESOME.url,
   ...FONT_STACK_BASE
       .filter(font => font.url !== null)
       .map(font => `${font.url};`),

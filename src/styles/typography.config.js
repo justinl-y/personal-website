@@ -1,5 +1,8 @@
 exports.FONT_AWESOME = {
-  '@import': 'url(http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css)',
+  name: 'Font Awesome',
+  url: {
+    '@import': 'url(//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)',
+  },
 };
 
 exports.FONT_AWESOME_ICON_SIZE = {
@@ -21,53 +24,31 @@ exports.FONT_SIZE_HEADING = {
 };
 
 // fonts
-/* const OPEN_SANS = {
-  name: 'Open Sans',
-  url: '@import url(https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,300i,400,400i,700,700i)',
-};*/
-
-/* const ROBOTO = {
-  name: 'Roboto',
-  url: {
-    '@import': 'url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i)',
-  },
-};*/
-
 const RALEWAY = {
   name: 'Raleway',
   url: {
-    '@import': 'url(https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i)',
+    '@import': 'url(//fonts.googleapis.com/css?family=Raleway:400,400i,700,700i)',
   },
 };
 
 const MONTSERRAT = {
   name: 'Montserrat',
   url: {
-    '@import': 'url(https://fonts.googleapis.com/css?family=Montserrat:800,800i)',
+    '@import': 'url(//fonts.googleapis.com/css?family=Montserrat:800,800i)',
   },
 };
 
 const ROBOTO_SLAB = {
   name: 'Roboto Slab',
   url: {
-    '@import': 'url(https://fonts.googleapis.com/css?family=Roboto+Slab:700)',
+    '@import': 'url(//fonts.googleapis.com/css?family=Roboto+Slab:700)',
   },
 };
-
-/* const HELVETICA = {
-  name: 'Helvetica',
-  url: null,
-};*/
 
 const SANS_SERIF = {
   name: 'sans-serif',
   url: null,
 };
-
-/* const SERIF = {
-  name: 'serif',
-  url: null,
-};*/
 
 const TIMES_NEW_ROMAN = {
   name: 'Times New Roman',
