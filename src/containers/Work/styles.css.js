@@ -56,9 +56,13 @@ export default {
     maxHeight: '50%',
     minHeight: '50%',
     // border: `1px solid ${CLAY}`,
+    position: 'relative',
+    display: 'flex',
   },
   '.itemImage': {
     height: '100%',
+    width: '100%',
+    position: 'absolute',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
